@@ -17,15 +17,15 @@ class CompteBancaire:
         else : return False
     
     @staticmethod
-    def somme(liste) -> float:
+    def somme(liste) -> float: # tu n'es pas sensé utiliser la méthode ceci, mais garder en mémoire les comptes bancaires car la classe
         s =0
         for cpt in liste:
             s += cpt._solde  
         return s  
             
-l =  List(CompteBancaire) 
-e1 = Client("nom", "prenom","adresse", "1234567890123455")
-e2 = Client("nom", "prenom","adresse", "1234567890123455")
+l =  List(CompteBancaire) # c'est List du module typing pour le typage, pas list() qui transforme un élément en liste
+e1 = Client("nom", "prenom","adresse", "123456789012345")
+e2 = Client("nom", "prenom","adresse", "123456789012345")
 
 c1 = CompteBancaire("2024-01-01", e1, 100000)
 c2 = CompteBancaire("2024-01-01", e2, 100000)
@@ -33,11 +33,11 @@ c2 = CompteBancaire("2024-01-01", e2, 100000)
 l.append(c1)
 l.append(c2)
 
-if c1.__eq__(c2):
+if c1.__eq__(c2): # utilisation du __eq__ pour comparer les soldes avec le '=='
     print("Les soldes des comptes bancaires sont égaux")
 else:
     print("Les soldes des comptes bancaires sont différents")
 
 ss= CompteBancaire.somme(l)
-print("Somme des comptes bancaires : {ss}")
+print(f"Somme des comptes bancaires : {ss}") # n'oublie pas le 'f' devant la 'string' pour avoir un f-string
 

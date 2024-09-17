@@ -61,7 +61,7 @@ class Movie:
     def lister_films(self):
         films = self._lire_fichier()
         for film in films:
-            print(f"{film["titre"]}  {film["date_de_sortie"]} {film["description"]}")
+            print(film["titre"], film["date_de_sortie"], film["description"])
     
     #Lister les films par ordre croissant de date de sortie
     def lister_date(self):
@@ -69,20 +69,20 @@ class Movie:
         dico = {}
         dico = sorted(films, key= lambda films : films["date_de_sortie"].split("/")[2])
         for film in dico:
-            print(f"{film["titre"]}  {film["date_de_sortie"]} {film["description"]}")
+            print(film["titre"], film["date_de_sortie"], film["description"])
     
     #Lister un film par son titre
     def lister_un_film(self, titre2):
         films = self._lire_fichier()
         for film in films:
             if (titre2 == film["titre"]):
-                print(f"{film["titre"]}  {film["date_de_sortie"]} {film["description"]}")
+                print(film["titre"], film["date_de_sortie"], film["description"])
             else:
                 print(f"Film {titre2} non trouvé")
         
         
         
-m = Movie("titre","date","description")
+m = Movie("titre","date","description") # En mettant les méthodes en static, on peut les appeler sans instancier un objet
 
 while(True):
     chiffre = input("Entrez le chiffre 1 pour commande create, le 2 pour commande read, le 3 pour commande update, le 4 pour commande delete et le 5 pour quitter : ")

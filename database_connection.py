@@ -9,12 +9,11 @@ class DatabaseConnection:
     nb_instance : int = 0
     
     def __post_init__(self) :
-        self.nb_instance += 1
-    
+        self.nb_instance += 1 # le compteur est static, on l'appel sur le nom de la classe
     
     @staticmethod
-    def nbInstances(self) -> str :
-        return "La classe DatabaseConnection possède actuellement {self.nb_instance} instance(s)."
+    def nbInstances(self) -> str : # static ne prend pas self en paramètre
+        return f"La classe DatabaseConnection possède actuellement {self.nb_instance} instance(s)." # appel nb_instance en static
     
     @classmethod
     def cree_instance(cls):
@@ -26,3 +25,5 @@ print(objet)
 
 objet2 = DatabaseConnection.cree_instance()
 print(objet2)
+
+print(DatabaseConnection.nbInstances()) 

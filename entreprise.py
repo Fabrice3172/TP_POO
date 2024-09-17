@@ -31,7 +31,7 @@ class Entreprise:
         return self._numero_siret
     
     @numero_siret.setter
-    def numero_siret(self, numero:str):
+    def numero_siret(self, numero:str): # pas de controle du siret à la modification
         self._numero_siret = numero
     
     def __str__(self) -> str:
@@ -41,6 +41,6 @@ e1 = Entreprise("MonEntreprise","Rue midi","12345678901234")
 
 print(e1.nom)
 print(e1.numero_siret)
-e1.numero_siret= "12340987654321"
+e1.numero_siret= "1234098765434655644561" # le siret peut etre différent de 14 digit à la modification
 print(e1)   
     

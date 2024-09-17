@@ -1,0 +1,9 @@
+# configuration files
+*.pub
+toto
+*.code-workspace
+*.vscode
+
+# Byte-compiled / optimized / DLL files
+__pycache__
+*.pyc
